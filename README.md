@@ -66,11 +66,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Brechin Andariese** [Brechy](https://github.com/Brechy)
-
-[NikSS](https://github.com/niksseif)
-
-[JBallin](https://github.com/JBallin)
+* **Brechin Andariese** - [Brechy](https://github.com/Brechy)
+* **Nik SSeif** - [NikSS](https://github.com/niksseif)
+* **J Ballin** - [JBallin](https://github.com/JBallin)
 
 [Contributors](https://github.com/Brechy/q2_g88/graphs/contributors) who participated in this project.
 
