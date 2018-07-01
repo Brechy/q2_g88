@@ -12,8 +12,5 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0"
-  },
-  "devDependencies": {
-    "startbootstrap-freelancer": "^4.0.0"
   }
 }
