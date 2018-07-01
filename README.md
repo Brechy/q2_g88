@@ -1,7 +1,15 @@
-# Fam Web App
-A community Web-App built by Galvanize WDI students as a Q2 project.
+# Fam
+A community-building web app built by Galvanize WDI students for their Q2 project.
 
-Everyone needs a community. Build yours using the Fam Web App. Connect with other parents in your area, lend a helping hand to a new mom in need of a little house cleaning or a meal. Ask for help from local parents to come walk your dog or just chat with you because it can be pretty isolating being a stay at home parent.
+## Description
+
+Every parent needs a community. Build yours using Fam!
+
+Do you recall the difficulty of being a new parent and want to help out a new mom? Well now you can offer to help with things such as house cleaning or preparing a meal.
+
+Are you a new mom struggling to keep up? Why not request a helping hand from somebody in your area? They could do everything from walking the dog to just giving you friendly company while you're at home taking care of the kids.
+
+Sign-up today to start offering or requesting help!
 
 ## Getting Started
 
