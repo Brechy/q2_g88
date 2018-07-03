@@ -80,5 +80,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) - readme template.
 * Inspired by humankind's nature to be nurtured by one another. Everyone needs a community.
