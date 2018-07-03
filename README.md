@@ -75,8 +75,8 @@ Add additional notes about how to deploy this on a live system
 ## Authors
 
 * **Brechin Andariese** - [Brechy](https://github.com/Brechy)
-* **Nik SSeif** - [NikSS](https://github.com/niksseif)
 * **J Ballin** - [JBallin](https://github.com/JBallin)
+* **Nik SSeif** - [NikSS](https://github.com/niksseif)
 
 [Contributors](https://github.com/Brechy/q2_g88/graphs/contributors) who participated in this project.
 
@@ -86,5 +86,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) - readme template.
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) - README template.
 * Inspired by humankind's nature to be nurtured by one another. Everyone needs a community.
