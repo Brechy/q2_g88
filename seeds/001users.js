@@ -5,6 +5,7 @@ exports.seed = function(knex, Promise) {
 		.then(function () {
 			// Inserts seed users
 			return knex('users').insert([{
+				id:1,
 				name: 'Tedothynia',
 				email: 'tedothynia@coolmom.com',
 				hashed_password: '$2b$08$be6vqFCWkEfNV1BK93.LiuZxuX1fJY0NZylXt1F3iZnZrk.NHY6qu',
@@ -14,6 +15,7 @@ exports.seed = function(knex, Promise) {
 				facebook: '/tedo_thynia',
 				instagram: '@tedo_coolmom'
 			}, {
+					id:2,
 					name: 'Barb',
 					email: 'pizza@eater.com',
 					hashed_password: '$2b$08$a0iWX97/CgIcmtmOfPPfHuK4LiAw.2i3xdGx1dgE5bcdAqb0t7WjG',
@@ -23,6 +25,7 @@ exports.seed = function(knex, Promise) {
 					facebook: '/barbkellner',
 					instagram: '@dapizzaeater'
 			}, {
+				id:3,
 				name: 'Jimbo',
 				email: 'jimbo@sendhelp.com',
 				hashed_password: '$2b$08$lU7LYTw6ad50s02j.a6cweQQUA3Y8oMY2BdAbgHBwt3XyfWRKdON6',
