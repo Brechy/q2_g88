@@ -380,6 +380,7 @@ a:focus, a:hover, a:active {
 }
 /*  Sign up form please do not touch*/
 /* ----------------------------------------- */
+
 /*background*/
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
@@ -400,7 +401,7 @@ body {
 	width: 400px;
 	margin: 50px auto;
 	text-align: center;
-	position: relative;
+	position: center;
   text-emphasis-color: red;
 
 }
