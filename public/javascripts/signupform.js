@@ -1,4 +1,7 @@
+console.log("hello");
+
 document.addEventListener("DOMContentLoaded", function(event) {
+
         console.log("DOM fully loaded and parsed")
         fetch('/users', { method: 'GET'})
         .then((response) => {
