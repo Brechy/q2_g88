@@ -6,3 +6,5 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* We will no longer need this after connecting our front and back end. This will need to be removed after everything else gets plugged into one another.  */
