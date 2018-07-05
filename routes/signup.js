@@ -13,6 +13,13 @@ router.get('/', (req, res, next) => {
 // REGISTER a user
 router.post('/', (req, res, next) => {
   console.log('/signup was hit');
+  console.log("req body", req.body);
+  if (!req.body.email || !req.body.password || !req.body.name) {
+    res.sendStatus(403)
+  }
+  let email = req.body.email
+  let name = req.body.name
+  let password = req.body.password
 
   //check the email doesn't already exist in users table
   knex('users')
@@ -35,15 +42,17 @@ router.post('/', (req, res, next) => {
     })
     .returning('*')
     .then((result) => {
-      console.log(result)
-      // res.redirect('/signin')
+      console.log("OK", result)
+      // res.sendStatus(200)
+      res.redirect('/signin/1')
     })
   })
   .catch((err) => {
-    // next(err)
+    next(err)
     console.log(err, 'error')
   })
 })
+
 
 
 module.exports = router;
