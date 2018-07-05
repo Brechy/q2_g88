@@ -58,19 +58,19 @@
     <form id= "form" class ="form-horizontal">
       <div class=form-group>
         <label for="mail" ></label>
-        <input  class="form-control" type="email" id="inputEmail" name="mail" placeholder="Enter your Email" class="form-control"  placeholder="Email" data-error="Bruh, that email address is invalid" required>
+        <input id = "email"class="form-control" type="email" id="inputEmail" name="mail" placeholder="Enter your Email" class="form-control"  placeholder="Email" data-error="Bruh, that email address is invalid" value=""required>
 
         <label for="password" ></label>
-        <input type="password"  name="password" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"  placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required>
+        <input id ="password"  name="password" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"  placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" value=""required>
 
         <label for="password data-validation-required-message" ></label>
-        <input type="password"  name="password" placeholder="Password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+        <input id="confirmpasseord" type="password"  name="password" placeholder="Confirm your password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
 
         <label for="name" ></label>
-        <input type="text"  name="name" placeholder="Enter your name" class="form-group"  placeholder="Password" title="Must match your password"required>
+        <input id="name" type="text"  name="name" placeholder="Enter your name" class="form-group"  placeholder="Password" title="Must match your password" value=""required>
 
       </div>
-      <button class="btn-primary">Signup</button>
+      <button id="signup" class="btn-primary"> Signup</button>
     </form>
       </div>
         </div>
@@ -79,6 +79,6 @@
     </div>
   </div>
 </section>
-<script src ="javascript/signupform.js"></script>
+<script src ="javascripts/signupform.js"></script>
 </body>
 </html>
