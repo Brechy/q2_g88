@@ -3,6 +3,6 @@ cache:
   directories:
   - "node_modules"
 node_js:
-  - "10"
+  - "lts/*"
 install: npm i
 script: npm start
