@@ -1,13 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../knex')
-const bcrypt = require('bcrypt-as-promised');
+const bcrypt = require('bcrypt');
+const path = require('path');
+
+const signupHTML = path.join(__dirname, '..', 'public/signupform.html');
+
+router.get('/', (req, res, next) => {
+  res.sendFile(signupHTML);
+})
 
 // REGISTER a user
-app.post('/signup', (req, res, next) => {
+router.post('/', (req, res, next) => {
   console.log('/signup was hit');
 
-  // check the email doesn't already exist in users table
+  //check the email doesn't already exist in users table
   knex('users')
   .where('email', req.body.email)
   .first()
@@ -24,14 +31,19 @@ app.post('/signup', (req, res, next) => {
     .insert({
       name: req.body.name,
       email: req.body.email,
-      password: hashed
+      hashed_password: hashed
     })
     .returning('*')
     .then((result) => {
-      res.redirect('/signin')
+      console.log(result)
+      // res.redirect('/signin')
     })
   })
   .catch((err) => {
-    next(err)
+    // next(err)
+    console.log(err, 'error')
   })
 })
+
+
+module.exports = router;
