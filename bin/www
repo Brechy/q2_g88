@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('q2-g88:server');
+var debug = require('debug')('fam:server');
 var http = require('http');
 
 /**
