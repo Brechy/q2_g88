@@ -1,9 +1,7 @@
 
 exports.seed = function(knex, Promise) {
-	// Deletes ALL existing entries
 	return knex('users').del()
 		.then(function () {
-			// Inserts seed users
 			return knex('users').insert([{
 				name: 'Tedothynia',
 				email: 'tedothynia@coolmom.com',
@@ -14,14 +12,14 @@ exports.seed = function(knex, Promise) {
 				facebook: '/tedo_thynia',
 				instagram: '@tedo_coolmom'
 			}, {
-					name: 'Barb',
-					email: 'pizza@eater.com',
-					hashed_password: '$2b$08$a0iWX97/CgIcmtmOfPPfHuK4LiAw.2i3xdGx1dgE5bcdAqb0t7WjG',
-					city: 'Bloopyly',
-					bio: 'Barb Kellner, the Pizza Eater. I run a pizza eating business where we dispose of your leftover pizza by eating it. I have 18 fur-babies.',
-					image_url: 'https://i.pinimg.com/originals/b2/31/ce/b231ce21f00379d9ff9c2f0a9218bda2.jpg',
-					facebook: '/barbkellner',
-					instagram: '@dapizzaeater'
+				name: 'Barb',
+				email: 'pizza@eater.com',
+				hashed_password: '$2b$08$a0iWX97/CgIcmtmOfPPfHuK4LiAw.2i3xdGx1dgE5bcdAqb0t7WjG',
+				city: 'Bloopyly',
+				bio: 'Barb Kellner, the Pizza Eater. I run a pizza eating business where we dispose of your leftover pizza by eating it. I have 18 fur-babies.',
+				image_url: 'https://i.pinimg.com/originals/b2/31/ce/b231ce21f00379d9ff9c2f0a9218bda2.jpg',
+				facebook: '/barbkellner',
+				instagram: '@dapizzaeater'
 			}, {
 				name: 'Jimbo',
 				email: 'jimbo@sendhelp.com',
