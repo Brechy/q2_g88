@@ -44,7 +44,7 @@ router.post('/', (req, res, next) => {
     .then((result) => {
       console.log("OK", result)
       // res.sendStatus(200)
-      res.redirect('/signin/1')
+      res.redirect('/signup1')
     })
   })
   .catch((err) => {
