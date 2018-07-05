@@ -4,5 +4,3 @@ cache:
   - "node_modules"
 node_js:
   - "lts/*"
-install: npm i
-script: npm start
