@@ -3,13 +3,6 @@ const router = express.Router();
 const knex = require('../knex');
 const path = require('path');
 
-<<<<<<< Updated upstream
-//path to html file
-const imgUpload = path.join(__dirname, '..', 'public/user_img.html');
-
-router.get('/', (req, res, next) => {
-	res.sendFile(imgUpload);
-=======
 const userImage = path.join(__dirname, '..', 'public/user_img.html');
 
 router.get('/', (req, res, next) => {
@@ -44,7 +37,6 @@ router.post('/', (req, res, next) => {
 			//can be handled in the error handler file
 			res.status('401').send({error:'Error, refresh page'});
 		});
->>>>>>> Stashed changes
 });
 
 module.exports = router;
