@@ -31,7 +31,7 @@ const userSignup = async () => {
   const name = document.querySelector('#name').value
   // console.log("in user signup", email, password, name);
 
-let data = await fetch('http://localhost:3000/signup', {
+let data = await fetch('/signup', {
     method: 'POST',
     headers: {
     'Content-Type':'application/json'
@@ -57,7 +57,7 @@ let data = await fetch('http://localhost:3000/signup', {
 //   const name = document.querySelector('#name').value
 //   console.log("in user signup", email, password, name);
 //
-//   fetch('http://localhost:3000/signup', {
+//   fetch('/signup', {
 //     method: 'POST',
 //     headers: {
 //     'Content-Type':'application/json'
