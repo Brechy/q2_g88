@@ -1,4 +1,4 @@
-console.log("hellooo");
+
 // let signup = document.querySelector('#signup');
 // console.log(signup);
 
@@ -21,7 +21,7 @@ function addEventListeners() {
 //     }
 //     console.log('event listeners added');
 //   })
-// }
+}
 
 
 const userSignup = async () => {
@@ -29,7 +29,7 @@ const userSignup = async () => {
   const email =  document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
   const name = document.querySelector('#name').value
-  console.log("in user signup", email, password, name);
+  // console.log("in user signup", email, password, name);
 
 let data = await fetch('http://localhost:3000/signup', {
     method: 'POST',
@@ -41,12 +41,12 @@ let data = await fetch('http://localhost:3000/signup', {
 
   let response = await data.json()
 
-  console.log(response,"<<<<I am response");
+
   return response
 
 } catch (err) {
   console.log(err);
-}
+  }
 }
 
 
