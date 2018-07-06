@@ -5,8 +5,8 @@ exports.up = function(knex, Promise) {
     table.string('name').notNullable()
     table.string('email').unique().notNullable();
     table.specificType('hashed_password', 'char(60)').notNullable();
-    table.string('city').notNullable();
-    table.text('bio').notNullable();
+    table.string('city');
+    table.text('bio');
     table.text('image_url');
     table.string('facebook').unique();
     table.string('instagram').unique();

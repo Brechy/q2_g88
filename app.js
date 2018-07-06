@@ -6,7 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var userimgRouter = require('./routes/userimg'); //brechin
+
+const userimgRouter = require('./routes/userimg'); //brechin
+
+var signupRouter= require('./routes/signup');
 
 var app = express();
 
@@ -21,7 +24,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
+
 app.use('/signup1', userimgRouter); //brechin
+app.use('/signup', signupRouter);
 
 
 // catch 404 and forward to error handler
