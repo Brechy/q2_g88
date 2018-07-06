@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 function addEventListeners() {
   const signup = document.querySelector('#signup');
   signup.addEventListener("click", (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     userSignup()
   })
 }
