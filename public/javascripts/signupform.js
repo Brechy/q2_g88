@@ -13,15 +13,15 @@ function addEventListeners() {
     userSignup()
   })
 
-  email.addEventListener("input", function (event) {
-    if (email.validity.typeMismatch) {
-  email.setCustomValidity("I expect an e-mail, darling!");
-    } else {
-      email.setCustomValidity("");
-    }
-    console.log('event listeners added');
-  })
-}
+//   email.addEventListener("input", function (event) {
+//     if (email.validity.typeMismatch) {
+//   email.setCustomValidity("I expect an e-mail, darling!");
+//     } else {
+//       email.setCustomValidity("");
+//     }
+//     console.log('event listeners added');
+//   })
+// }
 
 
 const userSignup = async () => {
