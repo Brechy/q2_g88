@@ -31,7 +31,7 @@ router.post('/', (req, res, next) => {
     }
 
     // hash the password
-    var hashed = bcrypt.hashSync(req.body.password, 8)
+    const hashed = bcrypt.hashSync(req.body.password, 8)
 
     // create new user record with the email + hashed password
     knex('users')
