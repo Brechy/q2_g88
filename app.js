@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var signupRouter= require('./routes/signup');
-const user_imgRouter = require('./routes/user_img'); //brechin
+//const user_imgRouter = require('./routes/user_img'); //brechin
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/signup', signupRouter);
 
-app.use('/signup/1', user_imgRouter); //brechin
+//app.use('/signup/1', user_imgRouter); //brechin
 
 
 // catch 404 and forward to error handler
