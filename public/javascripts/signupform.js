@@ -1,10 +1,6 @@
-
-// let signup = document.querySelector('#signup');
-// console.log(signup);
-
 document.addEventListener("DOMContentLoaded", (event) => {
     addEventListeners()
-    })
+  })
 
 function addEventListeners() {
   const signup = document.querySelector('#signup');
@@ -12,7 +8,34 @@ function addEventListeners() {
     event.preventDefault()
     userSignup()
   })
+}
 
+const userSignup = async () => {
+  try {
+    const email =  document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+    const name = document.querySelector('#name').value
+
+  let data = await fetch('/signup', {
+      method: 'POST',
+      headers: {
+      'Content-Type':'application/json'
+      },
+      body: JSON.stringify({ name, email, password })
+    })
+
+    let response = await data.json()
+    return response
+
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+
+// console.log("in user signup", email, password, name);
+// let signup = document.querySelector('#signup');
+// console.log(signup);
 //   email.addEventListener("input", function (event) {
 //     if (email.validity.typeMismatch) {
 //   email.setCustomValidity("I expect an e-mail, darling!");
@@ -21,36 +44,6 @@ function addEventListeners() {
 //     }
 //     console.log('event listeners added');
 //   })
-}
-
-
-const userSignup = async () => {
-  try {
-  const email =  document.querySelector('#email').value;
-  const password = document.querySelector('#password').value;
-  const name = document.querySelector('#name').value
-  // console.log("in user signup", email, password, name);
-
-let data = await fetch('/signup', {
-    method: 'POST',
-    headers: {
-    'Content-Type':'application/json'
-    },
-    body: JSON.stringify({ name, email, password })
-  })
-
-  let response = await data.json()
-
-
-  return response
-
-} catch (err) {
-  console.log(err);
-  }
-}
-
-
-
 // function userSignupOld() {
 //   const email =  document.querySelector('#email').value;
 //   const password = document.querySelector('#password').value;
