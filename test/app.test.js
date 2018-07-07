@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../app.js');
+const app = require('../app');
 
 describe('App', function() {
   it('should respond with status 200', (done) => {

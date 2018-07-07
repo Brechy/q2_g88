@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../app.js');
+const app = require('../app');
 const knex = require('../knex');
 
 knex.migrate.rollback()
