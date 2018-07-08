@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 
 const signupRouter= require('./routes/signup');
 //const user_imgRouter = require('./routes/user_img'); //brechin
+const userBioRouter = require('./routes/user_bio')
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.use('/users', usersRouter);
 app.use('/signup', signupRouter);
 
 //app.use('/signup/1', user_imgRouter); //brechin
-
+app.use('/signup2', userBioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
