@@ -1,3 +1,4 @@
+
 console.log('hellooo');
 // let signup = document.querySelector('#signup');
 // console.log(signup);
@@ -54,13 +55,24 @@ const userSignup = () => {
 
 
 
+// console.log("in user signup", email, password, name);
+// let signup = document.querySelector('#signup');
+// console.log(signup);
+//   email.addEventListener("input", function (event) {
+//     if (email.validity.typeMismatch) {
+//   email.setCustomValidity("I expect an e-mail, darling!");
+//     } else {
+//       email.setCustomValidity("");
+//     }
+//     console.log('event listeners added');
+//   })
 // function userSignupOld() {
 //   const email =  document.querySelector('#email').value;
 //   const password = document.querySelector('#password').value;
 //   const name = document.querySelector('#name').value
 //   console.log("in user signup", email, password, name);
 //
-//   fetch('http://localhost:3000/signup', {
+//   fetch('/signup', {
 //     method: 'POST',
 //     headers: {
 //     'Content-Type':'application/json'
