@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
     table.specificType('hashed_password', 'char(60)').notNullable();
     table.string('city');
     table.text('bio');
-    table.text('image_url');
+    table.text('image_url')
     table.string('facebook').unique();
     table.string('instagram').unique();
     table.timestamps(true, true)
