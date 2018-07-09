@@ -13,13 +13,3 @@ describe('Test app', function() {
       .expect(200, done);
   });
 });
-
-// This is a test for user bio route signu2
-describe('GET /signup2', () => {
-    it('responds with JSON', done => {
-        request(app)
-            .get('/signup2')
-            .expect('Content-Type', /text.html/)
-            .expect(200, done);
-    });
-});
