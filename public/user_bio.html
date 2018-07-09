@@ -61,15 +61,16 @@
         <h2 class="text-center text-uppercase text-white">Bio</h2>
         <hr class="star-light mb-5"/>
           <div class="container mb-4"></div>
-        <form action="click" method="POST" target="self">
-          Bio : <input type="text" name="bio" required>
-          City : <input type="text" name="city" required>
-          facebook: <input type ="url" name="facebook-url" required>
-          Instagram: <input type ="url" name="facebook-url" required>
-        </form>
-          <button id="submit"class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button">
-          Submit
-          </button>
+          <form  id= "form" class ="form-horizontal">
+            Bio : <input id ="bio" type="text" name="bio" value="" class="form-control" required>
+            City : <input id ="city" type="text" name="city" value="" class="form-control" required>
+            facebook: <input id ="facebook" type ="url" name="facebook-url" class="form-control" title="please enter your facebook URL" value ="" required>
+            Instagram: <input id ="instagram" type ="url" name="facebook-url" value="" class="form-control" title="please enter your instagaram URL" required>
+            <button id="submit"  class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">
+            Submit
+            </button>
+          </form>
+
         <!-- button that populates default image above, send image URL to database, redirect to /sighnup2 -->
       </div>
     </section>
