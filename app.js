@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const userimgRouter = require('./routes/userimg'); //brechin
+const apiRouterUser = require('./routes/api_user.js');
 const signupRouter= require('./routes/signup');
 
 const app = express();
@@ -23,6 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
+
+app.use('/api/v1/user', apiRouterUser);
 
 app.use('/signup1', userimgRouter); //brechin
 app.use('/signup', signupRouter);

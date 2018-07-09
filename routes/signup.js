@@ -3,6 +3,7 @@ const router = express.Router();
 const knex = require('../knex');
 const bcrypt = require('bcrypt');
 const path = require('path');
+const md5 = require('md5');
 
 const signupHTML = path.join(__dirname, '..', 'public/signupform.html');
 
@@ -14,8 +15,11 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
 	console.log('/signup was hit');
 	console.log('req body', req.body);
+	res.contentType('application/json');
 	if (!req.body.email || !req.body.password || !req.body.name) {
-		res.sendStatus(403);
+		res.statusCode = 400;
+		res.send('{"result": "failed", "message": "email, password, and name are required."}');
+		return;
 	}
 	let email = req.body.email;
 	let name = req.body.name;
@@ -27,7 +31,9 @@ router.post('/', (req, res, next) => {
 		.first()
 		.then((user) => {
 			if(user) {
-				throw new Error('Oops that email is already used');
+				res.statusCode = 409;
+				res.send('{"result": "failed", "message": "Oops that email is already used"}');
+				return;
 			}
 
 			// hash the password
@@ -38,13 +44,15 @@ router.post('/', (req, res, next) => {
 				.insert({
 					name: req.body.name,
 					email: req.body.email,
-					hashed_password: hashed
+					hashed_password: hashed,
+					image_url: `https://www.gravatar.com/avatar/${md5(req.body.email)}.jpg`
 				})
 				.returning('*')
 				.then((result) => {
 					console.log('OK', result);
-					// res.sendStatus(200)
-					res.redirect('/signup1');
+					res.statusCode = 200;
+					res.send('{"result": "ok"}');
+					// res.redirect('/signup1');
 				});
 		})
 		.catch((err) => {
