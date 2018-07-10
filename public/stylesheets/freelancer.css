@@ -450,3 +450,12 @@ input{
     border-bottom: 2px solid #50d8a4;
 }
 /* End of sign up form style */
+
+/*Beginning of User Image page styling*/
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
