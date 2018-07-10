@@ -24,7 +24,7 @@ const userSignup = async () => {
       body: JSON.stringify({ name, email, password })
     })
 
-    let response = await data.json()
+    const response = await data.json()
     return response
 
   } catch (err) {
