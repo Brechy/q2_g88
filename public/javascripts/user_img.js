@@ -26,7 +26,7 @@ const updateImage = () => {
 		window.location.replace('/signup');
 		return;
 	}
-	fetch('http://localhost:3000/api/v1/user/'+ email +'/img')
+	fetch('/api/v1/user/'+ email +'/img')
 		.then (data =>
 			data.json()
 		).then(json => {
@@ -48,7 +48,7 @@ const userImage = () => {
 	try {
 		const image = document.querySelector('#userImage').value;
 
-		fetch('http://localhost:3000/api/v1/user/'+ email +'/img', {
+		fetch('/api/v1/user/'+ email +'/img', {
 			method: 'POST',
 			headers: {
 				'Content-Type':'application/json'

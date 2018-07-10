@@ -32,7 +32,7 @@ const userSignup = () => {
 		const name = document.querySelector('#name').value;
 		console.log('in user signup', email, password, name);
 
-		fetch('http://localhost:3000/signup', {
+		fetch('/signup', {
 			method: 'POST',
 			headers: {
 				'Content-Type':'application/json'
