@@ -18,15 +18,6 @@ const addEventListeners = () => {
     console.log(email,"<<<<<email");
     return email;
  }
-// const updateUser = () => {
-//   console.log("i am here");
-// 	const email = window.localStorage.getItem('fam:email');
-//   console.log(email,"<<<< I am email");
-// 	if(!email) {
-// 		window.location.replace('/signup1');
-// 		return;
-// 	}
-// }
 
 const userBio = async () => {
   try {
