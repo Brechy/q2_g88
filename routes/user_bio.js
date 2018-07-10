@@ -12,9 +12,6 @@ router.get('/', (req, res, next) => {
 //add the user-bio to the // DB
 router.post('/',(req, res, next) => {
 
-  if(!req.body.bio || !req.body.city || !req.body.facebook || !req.body.instagram){
-    res.sendStatus(403);
-}
 
 knex('users')
 .where('users.bio', req.body.bio)

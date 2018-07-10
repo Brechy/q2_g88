@@ -19,11 +19,8 @@ const userSignup = () => {
 		const email =  document.querySelector('#email').value;
 		const password = document.querySelector('#password').value;
 		const name = document.querySelector('#name').value;
-		console.log('in user signup', email, password, name);
 
 
-		const response = await data.json()
-		return response
 		fetch('/signup', {
 			method: 'POST',
 			headers: {
