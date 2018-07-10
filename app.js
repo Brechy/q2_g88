@@ -33,7 +33,7 @@ app.use('/signup1', userimgRouter); //brechin
 app.use('/signup', signupRouter);
 
 //THis is the route for userBio
-app.use('/signup2',usersRouter);
+app.use('/signup2',userBioRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	next(createError(404));

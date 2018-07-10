@@ -1,17 +1,33 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  console.log("I am here");
+
   addEventListeners();
 })
 
 
 
-function addEventListeners() {
+const addEventListeners = () => {
+  event.preventDefault();
   const submit = document.querySelector("#submit");
-  submit.addEventListener('click',(event) => {
-  userBio ();
-})
+    submit.addEventListener('click',(event) => {
+    userBio ();
+    })
 };
+ const userEmail = () =>{
+   	const email = window.localStorage.getItem('fam:email');
+    console.log(email,"<<<<<email");
+    return email;
+ }
+// const updateUser = () => {
+//   console.log("i am here");
+// 	const email = window.localStorage.getItem('fam:email');
+//   console.log(email,"<<<< I am email");
+// 	if(!email) {
+// 		window.location.replace('/signup1');
+// 		return;
+// 	}
+// }
+
 const userBio = async () => {
   try {
     const bio = document.querySelector("#bio").value;
