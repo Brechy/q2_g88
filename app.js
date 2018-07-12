@@ -12,6 +12,7 @@ const apiRouterUser = require('./routes/api_user.js');
 const signupRouter= require('./routes/signup');
 //const user_imgRouter = require('./routes/user_img'); //brechin
 const userBioRouter = require('./routes/user_bio')
+const profileRouter = require('./routes/profile')
 
 const app = express();
 
@@ -34,6 +35,9 @@ app.use('/signup', signupRouter);
 
 //THis is the route for userBio
 app.use('/signup2',userBioRouter);
+
+//This route is for profile.
+app.use('/profile',profileRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	next(createError(404));
