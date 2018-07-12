@@ -8,10 +8,10 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const userimgRouter = require('./routes/userimg'); //brechin
-const apiRouterUser = require('./routes/api_user.js');
+const apiRouterUser = require('./routes/api_user.js'); //brechin
 const signupRouter= require('./routes/signup');
-//const user_imgRouter = require('./routes/user_img'); //brechin
-const userBioRouter = require('./routes/user_bio')
+const userBioRouter = require('./routes/user_bio');
+const userCategoriesRouter = require('./routes/usercategories'); //brechin
 
 const app = express();
 
@@ -27,10 +27,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
 
-app.use('/api/v1/user', apiRouterUser);
+app.use('/api/v1/user', apiRouterUser); //brechin
 
 app.use('/signup1', userimgRouter); //brechin
 app.use('/signup', signupRouter);
+
+app.use('/usercategories',  userCategoriesRouter); //brechin
 
 //THis is the route for userBio
 app.use('/signup2',userBioRouter);

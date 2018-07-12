@@ -19,6 +19,10 @@ function addEventListeners() {
 	});
 }
 
+const updateCategories() => {
+	//
+}
+
 // //user's email is stored in local storage in signup page. Here we check database to see if there is a default image url saved in the db (gravatar)
 // //if image exists, populate DOM with gravatar image
 // const updateImage = () => {
