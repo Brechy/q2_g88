@@ -381,22 +381,7 @@ a:focus, a:hover, a:active {
 /*  Sign up form please do not touch*/
 /* ----------------------------------------- */
 
-/*background*/
 
-/* @import url(https://fonts.googleapis.com/css?family=Montserrat);
-html {
-	height: 100%;
-	/*Image only BG fallback*/
-
-	/*background = gradient + image pattern combo*/
-	/* background: */
-		/* linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6)); */
-/* } */
-
-/* body {
-	font-family: montserrat, arial, verdana;
-	color: black
-} */
 #form {
 	width: 400px;
 	margin: 50px auto;
@@ -458,7 +443,7 @@ html {
 input{
 	font-family: 'Josefin Slab', serif;
     width: 100%;
-	font-size: 30px;
+	  font-size: 30px;
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
