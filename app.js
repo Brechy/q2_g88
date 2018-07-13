@@ -39,7 +39,7 @@ app.use('/signup2',userBioRouter);
 
 //These routes is for profile.
 // app.use('/profile',profileRouter)
-app.use('/profile/:id',profileRouter)
+app.use('/profile',profileRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	next(createError(404));
