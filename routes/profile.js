@@ -13,15 +13,8 @@ router.get('/view/:userid', (req, res, next) => {
 // this route is giving me my profile
 router.get('/', (req, res, next) => {
 	res.sendFile(myProfileHTML)
-  // USE KNEX TO GET ALL USERS
-  // knex('users')
-	// .where('id',myId)
-  // .then((data) => {
-  //   console.log('data....', data)
-  //   res.json(data)
-  // })
-
 })
+
 //this route is for getting one user.
 router.get('/api/:userid', (req, res, next) => {
   // USE KNEX TO GET A SPECIFIC USER
@@ -32,6 +25,7 @@ router.get('/api/:userid', (req, res, next) => {
     res.json(data)
   })
 })
+
 
 
 module.exports = router;
