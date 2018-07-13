@@ -14,6 +14,7 @@ const signupRouter= require('./routes/signup');
 const userBioRouter = require('./routes/user_bio')
 const profileRouter = require('./routes/profile')
 
+
 const app = express();
 
 // view engine setup
@@ -36,8 +37,8 @@ app.use('/signup', signupRouter);
 //THis is the route for userBio
 app.use('/signup2',userBioRouter);
 
-//This route is for profile.
-app.use('/profile',profileRouter)
+//These routes is for profile.
+// app.use('/profile',profileRouter)
 app.use('/profile/:id',profileRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
