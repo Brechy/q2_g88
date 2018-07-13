@@ -11,6 +11,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/', (req, res, next) => {
   // USE KNEX TO GET A SPECIFIC USER
+
   knex('users')
   .where('id', req.params.userid)
   .then((data) => {
