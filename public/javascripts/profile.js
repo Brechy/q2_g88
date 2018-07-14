@@ -10,8 +10,10 @@ console.log(id,"<<<id");
 
 const name = document.querySelector("#username");
 const bio = document.querySelector("#bio");
-const offers = document.querySelector("#offers");
-const requests = document.querySelector("#requests");
+const offersul = document.querySelectorAll("#offers")[0];
+const requestsul = document.querySelectorAll("#requests")[0];
+
+
 
 fetch('/users/' + id)
 .then(res => res.json())
@@ -19,49 +21,36 @@ fetch('/users/' + id)
 	name.innerText = user[0].name
 	bio.innerText = user[0].bio
 	// offers
-	// for (offer of offers)
+		// for (offer of offers){
+		// 	let li = document.createElement('li')
+		// 	li.innerText = user[0].offer;
+		// 	offer.appendChild(li);
+		// }
 	// requests
 })
 
 
+//Getting offer from the offer api, assigning each to the list of offers.
+fetch('/offers/'+id)
+.then(res => res.json())
+.then (offers => {
+	offers.forEach((offer) => {
+		let li = document.createElement('li')
+		li.innerText = offer.title;
+		offersul.appendChild(li)
+})
+} )
 
-//
-// //DOM loaded and starts looking for buttons
-// console.log("i am here do you see me");
-// document.addEventListener('DOMContentLoaded', (event) => {
-//
-//   userId();
-// 	usersData();
-//
-// });
-//
-// const userId = () =>{
-// 	 const id = window.localStorage.getItem('fam:id');
-//    console.log(id,"<<<<<id");
-//    return id;
-// }
-//
-//
-//
-//
-// const usersData = async() => {
-// try{
-// console.log('i am here');
-// 	let username = document.querySelector("#username").innerText;
-// 	let bio = document.querySelector("#bio").innerText;
-// 	let offer = document.querySelector("#offers").innerText;
-// 	let request = document.querySelector("#requests").innertext;
-//
-//     let data = await fetch('/profile/api/:id',{method :'GET'})
-//     .then((response) => {
-//          return response.json();
-//     }).then((data)=> {
-// 			console.log(data,"<<<data");
-// 			 // username = data.name;
-// 			 // bio = data.bio
-//
-// 		})
-// 	} catch (err) {
-//     console.log(err);
-//   }
-//   }
+
+fetch('/requests/'+id)
+.then(res => res.json())
+.then (requests => {
+	requests.forEach((request) => {
+		console.log(request.title,"<<<request");
+		let li = document.createElement('li')
+		console.log(li,"<<<li");
+		li.innerText = request.title;
+		requestsul.appendChild(li)
+
+})
+} )
