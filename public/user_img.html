@@ -32,7 +32,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Fam</a>
+        <a href="index.html" class="navbar-brand js-scroll-trigger" href="#page-top">Fam</a>
 
 
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,50 +42,36 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Home</a>
+              <a href="index.html" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">Home</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">LOGIN</a>
+              <a href="login.html" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">LOGIN</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+              <a href="https://github.com/Brechy/fam" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- WHITE AREA -->
-    <section class="portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">INSERT TEXT HERE</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- GREEN AREA -->
     <section class="bg-primary text-white mb-0" id="about">
       <div class="container">
-        <h2 class="text-center text-uppercase text-white">INSERT TEXT HERE</h2>
+        <h2 class="text-center text-uppercase text-white">Upload Profile Image</h2>
         <hr class="star-light mb-5"/>
-        <div class="row">
-          <div class="col-lg-4 ml-auto">
+          <div class="container mb-4" id="userImgContainer" style="background: url(https://is5-ssl.mzstatic.com/image/thumb/Purple71/v4/36/09/16/36091621-a5a0-eabe-cc28-eaaa47aa2a74/mzl.otsvvuzi.png/1200x630bb.jpg); background-size:contain; background-repeat: no-repeat; background-position: center; width: 300px; height: 300px;"></div>
           </div>
-          <div class="col-lg-4 mr-auto">
-          </div>
+        <div id="userImg" class="container">
+          <form action="#" method="PUT" target="self">
+          Upload your Own image URL : <input type="url" id="userImage" name="userImage"/>
+            <button type="button" id="submit" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">
+          Submit
+            </button>
+            <button type="button" id="next" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">Next</button>
+          </form>
         </div>
-      </div>
+        <!-- button that populates default image above, send image URL to database, redirect to /sighnup2 -->
     </section>
 
     <!-- Footer -->
@@ -142,6 +128,8 @@
         <i class="fa fa-chevron-up"></i>
       </a>
     </div>
+  </body>
+</html>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -158,6 +146,5 @@
     <!-- Custom scripts for this template -->
     <script src="vendor/freelancer/js/freelancer.min.js"></script>
 
-  </body>
-
-</html>
+    <!-- Ajax Scripts -->
+    <script src ="javascripts/user_img.js"></script>
