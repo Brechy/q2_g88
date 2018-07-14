@@ -1,4 +1,11 @@
-const id = window.location.pathname.replace('/profile', '').replace('/', '') || window.localStorage.getItem('fam:id');
+const id =
+	// return :userid if in path ("/profile/2")
+	window.location.pathname.replace('/profile', '').replace('/', '') ||
+	// else check localstorage for id
+	window.localStorage.getItem('fam:id') ||
+	// alert of error
+	alert("You must login to see your profile, showing you a sample user instead")
+
 console.log(id,"<<<id");
 
 const name = document.querySelector("#username");
@@ -6,7 +13,7 @@ const bio = document.querySelector("#bio");
 const offers = document.querySelector("#offers");
 const requests = document.querySelector("#requests");
 
-fetch('/profile/api/' + id)
+fetch('/users/' + id)
 .then(res => res.json())
 .then(user => {
 	name.innerText = user[0].name
