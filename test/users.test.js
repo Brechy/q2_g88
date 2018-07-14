@@ -8,5 +8,13 @@ knex.migrate.rollback()
 .then(() => knex.migrate.latest())
 .then(() => knex.seed.run())
 .then(() => knex.select().from('users'))
-.then(data => console.log(data))
 .finally(() => knex.destroy());
+
+describe('GET /users', () => {
+  it('should return JSON', done => {
+    request(app)
+    .get('/users')
+    .expect('Content-Type', /json/)
+    .expect(200, done)
+  })
+})
