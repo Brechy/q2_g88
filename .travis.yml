@@ -6,6 +6,5 @@ node_js:
   - "10"
 services:
   - postgresql
-
-before-script:
+before_script:
   - psql -c 'create database fam_test;' -U postgres
