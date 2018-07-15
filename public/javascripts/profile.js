@@ -15,16 +15,17 @@ const requestsul = document.querySelectorAll("#requests")[0];
 const profileImage = document.querySelector('#profile-image');
 const fb = document.querySelector('#facebook');
 const insta = document.querySelector('#instagram');
-
+const city = document.querySelector('#city');
 
 fetch('/users/' + id)
 .then(res => res.json())
 .then(user => {
-	name.innerText = user[0].name
-	bio.innerText = user[0].bio
-	profileImage.src = user[0].image_url
-	fb.href = user[0].facebook
-	insta.href = user[0].instagram
+	name.innerText = user[0].name;
+	bio.innerText = user[0].bio;
+	profileImage.src = user[0].image_url;
+	fb.href = user[0].facebook;
+	insta.href = user[0].instagram;
+	city.innerText = user[0].city;
 	// offers
 		// for (offer of offers){
 		// 	let li = document.createElement('li')
