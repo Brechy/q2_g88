@@ -5,12 +5,11 @@ const app = require('../app');
 const knex = require('../knex');
 
 
-describe('GET /users', () => {
-  before(() => {
+describe('users', () => {
+  beforeEach(() => {
     return knex.migrate.rollback()
     .then(() => knex.migrate.latest())
     .then(() => knex.seed.run())
-    .then(() => knex.select().from('users'))
   })
   after(() => knex.destroy());
 
