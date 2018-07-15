@@ -8,7 +8,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const signupRouter= require('./routes/signup');
-const userimgRouter = require('./routes/userimg');
+const userimgRouter = require('./routes/userimg'); //brechin
 const apiRouterUser = require('./routes/api_user.js');
 const userBioRouter = require('./routes/user_bio');
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/api/v1/user', apiRouterUser);
 app.use('/signup', signupRouter);
-app.use('/signup1', userimgRouter);
+app.use('/signup1', userimgRouter); //brechin
 app.use('/signup2',userBioRouter);
 
 
