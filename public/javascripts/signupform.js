@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function addEventListeners() {
-	const signup = document.querySelector('#signup');
-	signup.addEventListener('click', (event) => {
+	const signup = document.querySelector('#form');
+	signup.addEventListener('submit', event => {
 		event.preventDefault();
 		userSignup();
 	});
