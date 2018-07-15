@@ -11,6 +11,7 @@ const addEventListeners = () => {
   form.addEventListener('submit', event => {
     event.preventDefault();
     userBio();
+    window.location.replace('/signup3');
   })
 };
  const checkEmail = () =>{
