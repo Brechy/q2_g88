@@ -11,19 +11,19 @@ router.get('/', (req, res, next) => {
 
 //add the user-bio to the // DB
 router.post('/',(req, res, next) => {
-knex('users')
-.where('users.id', req.body.id)
-.first()
-.insert({
-  bio: req.body.bio,
-  city: req.body.city,
-  facebook: req.body.facebook,
-  instagram: req.body.instagram
-})
-.returning('*')
-.then((result) =>{
-  res.redirect('/signup3')
-});
+  knex('users')
+  .where('users.email', req.body.email)
+  .first()
+  .update({
+    bio: req.body.bio,
+    city: req.body.city,
+    facebook: req.body.facebook,
+    instagram: req.body.instagram
+  })
+  .returning('*')
+  .then((result) =>{
+    res.redirect('/signup3')
+  });
 });
 
 module.exports = router;

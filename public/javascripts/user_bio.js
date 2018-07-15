@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 const addEventListeners = () => {
-  event.preventDefault();
-  const submit = document.querySelector("#submit");
-    submit.addEventListener('click',(event) => {
-    userBio ();
-    })
+  const form = document.querySelector("#form");
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    userBio();
+  })
 };
  const checkEmail = () =>{
    	const email = window.localStorage.getItem('fam:email');
@@ -29,13 +29,14 @@ const userBio = async () => {
     const city = document.querySelector("#city").value;
     const facebook = document.querySelector("#facebook").value;
     const instagram = document.querySelector("#instagram").value;
+    const email = checkEmail();
 
     let data = await fetch('/signup2', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ bio, city, facebook, instagram })
+      body: JSON.stringify({ bio, city, facebook, instagram, email })
     })
     const response = await data.json()
     return response;
