@@ -55,57 +55,44 @@
       </div>
     </nav>
 
-    <!-- WHITE AREA -->
-    <!-- <section class="portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">INSERT TEXT HERE</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <!-- GREEN AREA -->
-    <section class="bg-primary text-white mb-2 mt-3" id="about">
+    <section class="bg-primary text-white mb-0 mt-5" id="about">
       <div class="container">
-        <h2 class="text-center text-uppercase text-white">Profile</h2>
+        <h2 class="text-center text-uppercase text-white" id="username">Example User</h2>
         <hr class="star-light">
-          <h4 class="title">username</h4>
-          <p id="username">Example user</p>
-            <section class="media" id="about">
-              <img id="profile-image" class="image rounded"src="/vendor/freelancer/img/pusheen_default.jpg" width="300px" height="300px">
-                <div  class ="media body ml-4"value =""><h5 >Bio:</h5>
-
-                  <p id="bio" class="ml-4" >Hello! I am a very nice mom, and I want to meet new moms.</p>
-                </div>
-            </section>
-
-            <section class="list-inline-item" id="about">
-              <div class="container-fluid">
-                <div class= "row">
-                    <ul class="list-group" id="offers">
-                      <h2 class="text_column mr-5">Offers</h2>
-                    </ul>
-                      <ul class="list-group" id="requests">
-                        <h2 class="text_column">Requests</h2>
-                      </ul>
-                </div>
-              </div>
-              <br></br>
-              <button class="button">Remove your profile</button>
-            </section>
-        </div>
+        <a href="#" style="float: left; color:inherit" id="facebook">
+          <img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" alt="Facebook" style="height:50px; width:50px">
+        </a>
+        <a href="#" style="float: right; color:inherit" id="instagram">
+          <img src="http://pngimg.com/uploads/instagram/instagram_PNG1.png" alt="Instagram" style="height:50px; width:50px">
+        </a>
       </div>
     </section>
+
+    <!-- WHITE AREA -->
+    <section class="media">
+        <img id="profile-image" class="image rounded"src="/vendor/freelancer/img/pusheen_default.jpg" width="300px" height="300px">
+          <div class="media ml-4"><h5 >Bio:</h5>
+            <p id="bio" class="ml-4" >Hello! I am a very nice mom, and I want to meet new moms.</p>
+          </div>
+          <div class="media ml-4"><h5 >City:</h5>
+            <p id="city" class="ml-4" >San Francisco, CA</p>
+          </div>
+          <section id="about">
+            <div>
+              <h3>Offers</h3>
+              <ul class="list-group" id="offers">
+              </ul>
+            </div>
+            <div>
+              <h3>Requests</h3>
+              <ul class="list-group" id="requests">
+              </ul>
+            </div>
+          </section>
+    </section>
+    <button class="button">Remove your profile</button>
 
     <!-- Footer -->
     <footer class="footer text-center">
