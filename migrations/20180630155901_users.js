@@ -8,8 +8,8 @@ exports.up = function(knex, Promise) {
     table.string('city');
     table.text('bio');
     table.text('image_url')
-    table.string('facebook').unique();
-    table.string('instagram').unique();
+    table.string('facebook');
+    table.string('instagram');
     table.timestamps(true, true)
   })
 }

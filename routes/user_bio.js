@@ -11,10 +11,8 @@ router.get('/', (req, res, next) => {
 
 //add the user-bio to the // DB
 router.post('/',(req, res, next) => {
-
-
 knex('users')
-.where('users.bio', req.body.bio)
+.where('users.id', req.body.id)
 .first()
 .insert({
   bio: req.body.bio,
