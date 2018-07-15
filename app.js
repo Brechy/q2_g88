@@ -10,7 +10,6 @@ const usersRouter = require('./routes/users');
 const userimgRouter = require('./routes/userimg'); //brechin
 const apiRouterUser = require('./routes/api_user.js');
 const signupRouter= require('./routes/signup');
-//const user_imgRouter = require('./routes/user_img'); //brechin
 const userBioRouter = require('./routes/user_bio')
 const profileRouter = require('./routes/profile');
 const offersRouter = require('./routes/offers');
@@ -40,8 +39,7 @@ app.use('/signup', signupRouter);
 app.use('/signup2',userBioRouter);
 
 //These routes is for profile.
-// app.use('/profile',profileRouter)
-app.use('/profile',profileRouter);
+app.use('/profile', profileRouter);
 app.use('/offers', offersRouter);
 app.use('/requests', requestsRouter);
 
