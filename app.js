@@ -28,11 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 
 app.use('/api/v1/user', apiRouterUser); //brechin
-
+app.use('/signup3', userCategoriesRouter); //brechin
 app.use('/signup1', userimgRouter); //brechin
 app.use('/signup', signupRouter);
 
-app.use('/usercategories',  userCategoriesRouter); //brechin
+app.use('/usercategories', userCategoriesRouter); //brechin
 
 //THis is the route for userBio
 app.use('/signup2',userBioRouter);

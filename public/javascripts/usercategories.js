@@ -9,66 +9,91 @@ function addEventListeners() {
 	const submit = document.querySelector('#submit');
 	submit.addEventListener('click', (event) => {
 		event.preventDefault();
-		// userImage();
-	});
-
-	const save = document.querySelector('#save');
-	save.addEventListener('click', (event) => {
-		event.preventDefault();
 		window.location.replace('/users');
 	});
-}
 
-const updateCategories() => {
-	//
-}
+	document.querySelectorAll('.famoffer').forEach((element) => {
+		element.addEventListener('click', () => {
+			sendCategories();
+		});
+	});
 
-// //user's email is stored in local storage in signup page. Here we check database to see if there is a default image url saved in the db (gravatar)
-// //if image exists, populate DOM with gravatar image
-// const updateImage = () => {
-// 	const email = window.localStorage.getItem('fam:email');
-// 	if(!email) {
-// 		window.location.replace('/signup');
-// 		return;
-// 	}
-// 	fetch('/api/v1/user/'+ email +'/img')
-// 		.then (data =>
-// 			data.json()
-// 		).then(json => {
-// 			if (json.result != 'ok') {
-// 				alert('Error: \n' + json.message);
-// 			} else {
-// 				const newImage = `url('${encodeURI(json.value)}')`;
-// 				document.querySelector('#userImgContainer').style.backgroundImage = newImage;
-// 			}
-// 		});
-// };
-// //if there is no gravatar connected to the email, the user will supply their own image URL, this gets updated in the database
-// const userImage = () => {
-// 	const email = window.localStorage.getItem('fam:email');
-// 	if(!email) {
-// 		window.location.replace('/signup');
-// 		return;
-// 	}
-// 	try {
-// 		const image = document.querySelector('#userImage').value;
-//
-// 		fetch('/api/v1/user/'+ email +'/img', {
-// 			method: 'POST',
-// 			headers: {
-// 				'Content-Type':'application/json'
-// 			},
-// 			body: JSON.stringify({'img': image})
-// 		}).then (data =>
-// 			data.json()
-// 		).then(json => {
-// 			if(json.result != 'ok') {
-// 				alert('Error: \n'+json.message);
-// 			} else {
-// 				updateImage();
-// 			}
-// 		});
-// 	} catch (err) {
-// 		console.log('In error catcher:', err);
-// 	}
-// };
+	document.querySelectorAll('.famrequest').forEach((element) => {
+		element.addEventListener('click', () => {
+			sendCategories();
+		});
+	});
+
+
+}
+const updateCategories = () => {
+	const email = window.localStorage.getItem('fam:email');
+	if(!email) {
+		window.location.replace('/signup');
+		return;
+	}
+	fetch('/api/v1/user/'+ email +'/categories')
+		.then (data =>
+			data.json()
+		).then(json => {
+			const offers = json.offers;
+			const requests = json.requests;
+			for (let i = 0; i < offers.length; i++) {
+				document.querySelectorAll('.famoffer').forEach((element) => {
+					if (element.parentNode.textContent.trim() === offers[i]) {
+						element.checked = true;
+					}
+				});
+			}
+			for (let i = 0; i < requests.length; i++) {
+				document.querySelectorAll('.famrequest').forEach((element) => {
+					if (element.parentNode.textContent.trim() === requests[i]) {
+						element.checked = true;
+					}
+				});
+			}
+			if (json.result != 'ok') {
+				alert('Error: \n' + json.message);
+			} else {
+				// document.querySelector('#').style.backgroundImage;
+			}
+		});
+};
+const sendCategories = () => {
+	const email = window.localStorage.getItem('fam:email');
+	if(!email) {
+		window.location.replace('/signup');
+		return;
+	}
+	try {
+		const requests = [];
+		const offers = [];
+
+		document.querySelectorAll('.famrequest').forEach((element) => {
+			if(element.checked) {
+				requests.push(element.parentNode.textContent.trim());
+			}
+		});
+		document.querySelectorAll('.famoffer').forEach((element) => {
+			if(element.checked) {
+				offers.push(element.parentNode.textContent.trim());
+			}
+		});
+
+		fetch('/api/v1/user/'+ email +'/categories', {
+			method: 'PUT',
+			headers: {
+				'Content-Type':'application/json'
+			},
+			body: JSON.stringify({'requests': requests, 'offers': offers})
+		}).then (data =>
+			data.json()
+		).then(json => {
+			if(json.result != 'ok') {
+				alert('Error: \n'+json.message);
+			}
+		});
+	} catch (err) {
+		console.log('In error catcher:', err);
+	}
+};
