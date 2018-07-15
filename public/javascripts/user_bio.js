@@ -24,14 +24,14 @@ const userBio = async () => {
     const bio = document.querySelector("#bio").value;
     const city = document.querySelector("#city").value;
     const facebook = document.querySelector("#facebook").value;
-    const instagaram = document.querySelector("#instagram").value;
+    const instagram = document.querySelector("#instagram").value;
 
     let data = await fetch('/signup2', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ bio, city, facebook, instagaram })
+      body: JSON.stringify({ bio, city, facebook, instagram })
     })
     const response = await data.json()
     return response;
