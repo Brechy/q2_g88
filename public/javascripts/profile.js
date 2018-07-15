@@ -13,7 +13,8 @@ const bio = document.querySelector("#bio");
 const offersul = document.querySelectorAll("#offers")[0];
 const requestsul = document.querySelectorAll("#requests")[0];
 const profileImage = document.querySelector('#profile-image');
-
+const fb = document.querySelector('#facebook');
+const insta = document.querySelector('#instagram');
 
 
 fetch('/users/' + id)
@@ -22,6 +23,8 @@ fetch('/users/' + id)
 	name.innerText = user[0].name
 	bio.innerText = user[0].bio
 	profileImage.src = user[0].image_url
+	fb.href = user[0].facebook
+	insta.href = user[0].instagram
 	// offers
 		// for (offer of offers){
 		// 	let li = document.createElement('li')
