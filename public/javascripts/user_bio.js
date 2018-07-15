@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
+  checkEmail();
   addEventListeners();
 })
 
@@ -13,8 +13,12 @@ const addEventListeners = () => {
     userBio ();
     })
 };
- const userEmail = () =>{
+ const checkEmail = () =>{
    	const email = window.localStorage.getItem('fam:email');
+  	if(!email) {
+      alert('Redirecting to beginning of signup');
+  		window.location.replace('/signup');
+  	}
     console.log(email,"<<<<<email");
     return email;
  }
