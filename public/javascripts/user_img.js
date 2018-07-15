@@ -11,9 +11,9 @@ function addEventListeners() {
 		event.preventDefault();
 		window.location.replace('/signup2');
 	});
-	const submit = document.querySelector('#submit');
-	submit.addEventListener('click', (event) => {
-		event.preventDefault();
+	const submit = document.querySelector('#image-form');
+	submit.addEventListener('submit', (event) => {
+		// event.preventDefault();
 		userImage();
 	});
 }

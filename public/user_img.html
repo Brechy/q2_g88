@@ -65,9 +65,9 @@
           <div class="container mb-4" id="userImgContainer" style="background: url(https://fam-io.herokuapp.com/vendor/freelancer/img/pusheen_default.jpg); background-size:contain; background-repeat: no-repeat; background-position: center; width: 300px; height: 300px;"></div>
           </div>
         <div id="userImg" class="container">
-          <form action="#" method="PUT" target="self">
-          Upload your Own image URL : <input type="url" id="userImage" name="userImage"/>
-            <button type="button" id="submit" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">
+          <form id="image-form">
+          Upload your Own image URL : <input type="url" id="userImage" name="userImage" required/>
+            <button id="submit" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">
           Submit
             </button>
             <button type="button" id="next" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">Next</button>
