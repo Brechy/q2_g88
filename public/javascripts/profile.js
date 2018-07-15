@@ -12,6 +12,7 @@ const name = document.querySelector("#username");
 const bio = document.querySelector("#bio");
 const offersul = document.querySelectorAll("#offers")[0];
 const requestsul = document.querySelectorAll("#requests")[0];
+const profileImage = document.querySelector('#profile-image');
 
 
 
@@ -20,6 +21,7 @@ fetch('/users/' + id)
 .then(user => {
 	name.innerText = user[0].name
 	bio.innerText = user[0].bio
+	profileImage.src = user[0].image_url
 	// offers
 		// for (offer of offers){
 		// 	let li = document.createElement('li')
