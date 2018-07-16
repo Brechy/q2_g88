@@ -33,6 +33,13 @@ function insertUser(n, user) {
   bios[n].textContent = user.bio;
 }
 
+function clearUser(n) {
+  imgs[n].forEach(img => img.src = '/vendor/freelancer/img/pusheen_default.jpg');
+  names[n].forEach(name => name.textContent = '');
+  cities[n].textContent = '';
+  bios[n].textContent = '';
+}
+
 function display(n, users, reverse) {
   const user = users[n];
   if (user) {
@@ -40,6 +47,7 @@ function display(n, users, reverse) {
     start = user.id + 1;
   } else {
     disableB(reverse ? prev : next);
+    clearUser(n);
   }
 };
 
