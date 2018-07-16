@@ -22,3 +22,37 @@ const bios = [bio1, bio2, bio3];
 
 let prev = document.querySelector('#prev');
 let next = document.querySelector('#next');
+
+
+// HELPER FUNCTIONS
+
+const insertUser = (n, user) => {
+  imgs[n].textContent = user.image_url;
+  names[n].textContent = user.name;
+  cities[n].textContent = user.city;
+  bios[n].textContent = user.bio;
+}
+
+function display(n, users, reverse=false) {
+  const user = users[n];
+  if (user) {
+    insertUser(n, user);
+    start = user.id + 1;
+  } else {
+    disableB(reverse ? prev : next);
+  }
+};
+
+function getUsers(startID, size, reverse=false) {
+  fetch(`users/range/${reverse ? 'reverse/' : ''}${startID}/${size}`)
+  .then(res => res.json())
+  .then(users => {
+    // if (max <= 3) disableB(prev);
+    for (let userNum = 0; userNum < size; userNum++) {
+      display(userNum);
+    }
+    currentUsers = users;
+  })
+}
+
+getMaxID = () => fetch('users/range/max').then(res => parseInt(res.json()))
