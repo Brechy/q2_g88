@@ -69,3 +69,14 @@ prev.onclick = () => {
   next.disabled = false;
   getUsers(start, size, true);
 }
+
+
+// ACTION
+
+let currentUsers = [];
+let start = 1;
+const size = 3;
+
+// LOAD INITIAL USERS
+prev.disabled = true;
+getUsers(start, size);
