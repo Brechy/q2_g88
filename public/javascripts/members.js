@@ -40,11 +40,13 @@ function clearUser(n) {
   bios[n].textContent = '';
 }
 
-function display(n, users) {
+function display(n, users, reverse) {
   const user = users[n];
+  if (reverse) {
+    n = (n === 0 ? (size - 1) : n % (size - 1))
+  }
   if (user) {
     insertUser(n, user);
-    start = user.id + 1;
   } else {
     clearUser(n);
     next.disabled = true;
@@ -55,16 +57,21 @@ function getUsers(startID, size, reverse=false) {
   fetch(`users/range/${reverse ? 'reverse/' : ''}${startID}/${size}`)
   .then(res => res.json())
   .then(users => {
-    checkMinMax(users, reverse);
-    for (let userNum = 0; userNum < size; userNum++) {
-      display(userNum, users);
+    if (users[2]) checkMinMax(users[2], reverse);
+    if (reverse) {
+      for (let userNum = size-1; userNum >= 0; userNum--) {
+        display(userNum, users, reverse);
+      }
+    } else {
+      for (let userNum = 0; userNum < size; userNum++) {
+        display(userNum, users, reverse);
+      }
     }
-    currentUsers = users;
+    setStarts(users);
   })
 }
 
 getMaxID = () => fetch('users/range/max').then(res => res.json())
-
 getMinID = () => fetch('users/range/min').then(res => res.json())
 
 const checkMaxID = (user, reverse) => {
@@ -81,12 +88,18 @@ const checkMinID = user => {
   })
 }
 
-const checkMinMax = (users, reverse) => {
-  if (reverse && users[0]) {
-    checkMinID(users[0])
-  } else if (users[2]) {
-    checkMaxID(users[2])
+const checkMinMax = (user, reverse) => {
+  if (reverse) {
+    checkMinID(user)
+  } else {
+    checkMaxID(user)
   }
+}
+
+const setStarts = (users) => {
+  const ids = users.filter(user => user).map(user => user.id);
+  nextStart = Math.max(...ids) + 1;
+  prevStart = Math.min(...ids) - 1;
 }
 
 
@@ -94,21 +107,27 @@ const checkMinMax = (users, reverse) => {
 
 next.onclick = () => {
   prev.disabled = false;
-  getUsers(start, size);
+  getUsers(nextStart, size);
 }
 
 prev.onclick = () => {
   next.disabled = false;
-  getUsers(start, size, true);
+  getUsers(prevStart, size, true);
 }
 
 
-// ACTION
+// SET GLOBALS
 
-let currentUsers = [];
-let start = 1;
+let nextStart = 0;
+let prevStart = 0;
 const size = 3;
 
+getMinID().then(min => nextStart = min);
+const ids = users.filter(user => user).map(user => user.id);
+nextStart = Math.max(...ids) + 1;
+prevStart = Math.min(...ids) - 1;
+
 // LOAD INITIAL USERS
+
 prev.disabled = true;
-getUsers(start, size);
+getUsers(nextStart, size);
