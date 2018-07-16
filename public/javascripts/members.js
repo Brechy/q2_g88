@@ -26,14 +26,14 @@ let next = document.querySelector('#next');
 
 // HELPER FUNCTIONS
 
-const insertUser = (n, user) => {
-  imgs[n].textContent = user.image_url;
-  names[n].textContent = user.name;
+function insertUser(n, user) {
+  imgs[n].forEach(img => img.src = user.image_url);
+  names[n].forEach(name => name.textContent = user.name);
   cities[n].textContent = user.city;
   bios[n].textContent = user.bio;
 }
 
-function display(n, users, reverse=false) {
+function display(n, users, reverse) {
   const user = users[n];
   if (user) {
     insertUser(n, user);
@@ -49,7 +49,7 @@ function getUsers(startID, size, reverse=false) {
   .then(users => {
     // if (max <= 3) disableB(prev);
     for (let userNum = 0; userNum < size; userNum++) {
-      display(userNum);
+      display(userNum, users, reverse);
     }
     currentUsers = users;
   })
