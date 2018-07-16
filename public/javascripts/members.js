@@ -20,6 +20,10 @@ const bio2 = document.querySelector('#bio2');
 const bio3 = document.querySelector('#bio3');
 const bios = [bio1, bio2, bio3];
 
+const profile1 = document.querySelector('#profile1')
+const profile2 = document.querySelector('#profile2')
+const profile3 = document.querySelector('#profile3')
+const profileButtons = [profile1, profile2, profile3];
 let prev = document.querySelector('#prev');
 let next = document.querySelector('#next');
 
