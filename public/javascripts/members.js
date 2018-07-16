@@ -40,14 +40,14 @@ function clearUser(n) {
   bios[n].textContent = '';
 }
 
-function display(n, users, reverse) {
+function display(n, users) {
   const user = users[n];
   if (user) {
     insertUser(n, user);
     start = user.id + 1;
   } else {
     clearUser(n);
-    (reverse ? prev : next).disabled = true;
+    next.disabled = true;
   }
 };
 
@@ -55,16 +55,39 @@ function getUsers(startID, size, reverse=false) {
   fetch(`users/range/${reverse ? 'reverse/' : ''}${startID}/${size}`)
   .then(res => res.json())
   .then(users => {
-    // if (max <= 3) disableB(prev);
+    checkMinMax(users, reverse);
     for (let userNum = 0; userNum < size; userNum++) {
-      display(userNum, users, reverse);
+      display(userNum, users);
     }
     currentUsers = users;
   })
 }
 
-getMaxID = () => fetch('users/range/max').then(res => parseInt(res.json()))
-getMinID = () => fetch('users/range/min').then(res => parseInt(res.json()))
+getMaxID = () => fetch('users/range/max').then(res => res.json())
+
+getMinID = () => fetch('users/range/min').then(res => res.json())
+
+const checkMaxID = (user, reverse) => {
+  getMaxID()
+  .then(max => {
+      if (user.id === max) next.disabled = true;
+    })
+}
+
+const checkMinID = user => {
+  getMinID()
+  .then(min => {
+      if (user.id === min) prev.disabled = true;
+  })
+}
+
+const checkMinMax = (users, reverse) => {
+  if (reverse && users[0]) {
+    checkMinID(users[0])
+  } else if (users[2]) {
+    checkMaxID(users[2])
+  }
+}
 
 
 // EVENT LISTENERS
