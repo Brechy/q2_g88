@@ -29,6 +29,7 @@ function addEventListeners() {
 const updateCategories = () => {
 	const email = window.localStorage.getItem('fam:email');
 	if(!email) {
+		alert('Redirecting to beginning of signup')
 		window.location.replace('/signup');
 		return;
 	}
@@ -62,6 +63,7 @@ const updateCategories = () => {
 const sendCategories = () => {
 	const email = window.localStorage.getItem('fam:email');
 	if(!email) {
+		alert('Redirecting to beginning of signup');
 		window.location.replace('/signup');
 		return;
 	}
