@@ -9,7 +9,7 @@ function addEventListeners() {
 	const submit = document.querySelector('#submit');
 	submit.addEventListener('click', (event) => {
 		event.preventDefault();
-		window.location.replace('/members');
+		window.location.replace('/users');
 	});
 
 	document.querySelectorAll('.famoffer').forEach((element) => {
@@ -29,7 +29,6 @@ function addEventListeners() {
 const updateCategories = () => {
 	const email = window.localStorage.getItem('fam:email');
 	if(!email) {
-		alert('Redirecting to beginning of signup')
 		window.location.replace('/signup');
 		return;
 	}
@@ -63,7 +62,6 @@ const updateCategories = () => {
 const sendCategories = () => {
 	const email = window.localStorage.getItem('fam:email');
 	if(!email) {
-		alert('Redirecting to beginning of signup');
 		window.location.replace('/signup');
 		return;
 	}
