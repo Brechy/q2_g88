@@ -9,7 +9,7 @@ function addEventListeners() {
 	const submit = document.querySelector('#submit');
 	submit.addEventListener('click', (event) => {
 		event.preventDefault();
-		window.location.replace('/users');
+		window.location.replace('/members');
 	});
 
 	document.querySelectorAll('.famoffer').forEach((element) => {
