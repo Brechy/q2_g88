@@ -27,4 +27,15 @@ router.get('/range/:startid/:size', (req, res) => {
 	.limit(size)
 	.then(data => res.json(data))
 })
+
+// GET 'size' Users in descending order ('reverse'), starting from 'startid'
+router.get('/range/reverse/:startid/:size', (req, res) => {
+	const start = parseInt(req.params.startid);
+	const size = parseInt(req.params.size);
+	knex('users')
+	.where('id', '<=', start)
+	.orderBy('id', 'desc')
+	.limit(size)
+	.then(data => res.json(data))
+})
 module.exports = router;
