@@ -45,4 +45,10 @@ router.get('/range/max', (req, res) => {
   .then(data => res.json(data[0].max));
 })
 
+// GET min User ID
+router.get('/range/min', (req, res) => {
+  knex('users').min('id')
+  .then(data => res.json(data[0].min));
+})
+
 module.exports = router;
