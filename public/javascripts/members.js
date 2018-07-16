@@ -56,3 +56,16 @@ function getUsers(startID, size, reverse=false) {
 }
 
 getMaxID = () => fetch('users/range/max').then(res => parseInt(res.json()))
+
+
+// EVENT LISTENERS
+
+next.onclick = () => {
+  prev.disabled = false;
+  getUsers(start, size);
+}
+
+prev.onclick = () => {
+  next.disabled = false;
+  getUsers(start, size, true);
+}
