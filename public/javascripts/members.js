@@ -64,6 +64,7 @@ function getUsers(startID, size, reverse=false) {
 }
 
 getMaxID = () => fetch('users/range/max').then(res => parseInt(res.json()))
+getMinID = () => fetch('users/range/min').then(res => parseInt(res.json()))
 
 
 // EVENT LISTENERS
