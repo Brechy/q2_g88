@@ -451,11 +451,15 @@ input{
 }
 /* End of sign up form style */
 
-/*Beginning of User Image page styling*/
+/*Beginning of User Categories page styling*/
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
+#parent {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  align-content: space-between;
+}
+
+#categories {
+  display: inline-flex;
 }
