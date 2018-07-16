@@ -38,4 +38,11 @@ router.get('/range/reverse/:startid/:size', (req, res) => {
 	.limit(size)
 	.then(data => res.json(data))
 })
+
+// GET max User ID
+router.get('/range/max', (req, res) => {
+  knex('users').max('id')
+  .then(data => res.json(data[0].max));
+})
+
 module.exports = router;
