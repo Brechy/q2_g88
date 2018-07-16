@@ -8,10 +8,15 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const userimgRouter = require('./routes/userimg'); //brechin
-const apiRouterUser = require('./routes/api_user.js');
+const apiRouterUser = require('./routes/api_user.js'); //brechin
 const signupRouter= require('./routes/signup');
-//const user_imgRouter = require('./routes/user_img'); //brechin
+
+const userCategoriesRouter = require('./routes/usercategories'); //brechin
 const userBioRouter = require('./routes/user_bio')
+const profileRouter = require('./routes/profile');
+const offersRouter = require('./routes/offers');
+const requestsRouter = require('./routes/requests');
+const membersRouter = require('./routes/members');
 
 const app = express();
 
@@ -27,13 +32,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
 
-app.use('/api/v1/user', apiRouterUser);
-
+app.use('/api/v1/user', apiRouterUser); //brechin
+app.use('/signup3', userCategoriesRouter); //brechin
 app.use('/signup1', userimgRouter); //brechin
 app.use('/signup', signupRouter);
 
+app.use('/usercategories', userCategoriesRouter); //brechin
+
 //THis is the route for userBio
 app.use('/signup2',userBioRouter);
+
+//These routes is for profile.
+app.use('/profile', profileRouter);
+app.use('/offers', offersRouter);
+app.use('/requests', requestsRouter);
+
+app.use('/members', membersRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	next(createError(404));
