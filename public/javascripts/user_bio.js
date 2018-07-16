@@ -31,7 +31,7 @@ const userBio = async () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.strigify({ bio, city, facebook, instagaram })
+      body: JSON.stringify({ bio, city, facebook, instagaram })
     })
     const response = await data.json()
     return response;
