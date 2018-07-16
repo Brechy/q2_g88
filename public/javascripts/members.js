@@ -46,8 +46,8 @@ function display(n, users, reverse) {
     insertUser(n, user);
     start = user.id + 1;
   } else {
-    disableB(reverse ? prev : next);
     clearUser(n);
+    (reverse ? prev : next).disabled = true;
   }
 };
 
