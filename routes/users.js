@@ -18,4 +18,13 @@ router.get('/:userid', (req, res, next) => {
   })
 })
 
+// GET 'size' Users, starting from 'startid'
+router.get('/range/:startid/:size', (req, res) => {
+	const start = parseInt(req.params.startid);
+	const size = parseInt(req.params.size);
+	knex('users')
+	.where('id', '>=', start)
+	.limit(size)
+	.then(data => res.json(data))
+})
 module.exports = router;
