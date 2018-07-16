@@ -24,6 +24,7 @@ const profile1 = document.querySelector('#profile1')
 const profile2 = document.querySelector('#profile2')
 const profile3 = document.querySelector('#profile3')
 const profileButtons = [profile1, profile2, profile3];
+
 let prev = document.querySelector('#prev');
 let next = document.querySelector('#next');
 
@@ -35,6 +36,8 @@ function insertUser(n, user) {
   names[n].forEach(name => name.textContent = user.name);
   cities[n].textContent = user.city;
   bios[n].textContent = user.bio;
+  profileButtons[n].onclick = () => { location.href = `profile/${user.id}` };
+  profileButtons[n].style = "display: inline";
 }
 
 function clearUser(n) {
@@ -42,6 +45,8 @@ function clearUser(n) {
   names[n].forEach(name => name.textContent = '');
   cities[n].textContent = '';
   bios[n].textContent = '';
+  profileButtons[n].onclick = null;
+  profileButtons[n].style = "display: none";
 }
 
 function display(n, users, reverse) {
