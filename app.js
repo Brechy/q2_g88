@@ -16,6 +16,7 @@ const userBioRouter = require('./routes/user_bio')
 const profileRouter = require('./routes/profile');
 const offersRouter = require('./routes/offers');
 const requestsRouter = require('./routes/requests');
+const membersRouter = require('./routes/members');
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use('/profile', profileRouter);
 app.use('/offers', offersRouter);
 app.use('/requests', requestsRouter);
 
+app.use('/members', membersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
