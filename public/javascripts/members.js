@@ -127,9 +127,7 @@ let prevStart = 0;
 const size = 3;
 
 getMinID().then(min => nextStart = min);
-const ids = users.filter(user => user).map(user => user.id);
-nextStart = Math.max(...ids) + 1;
-prevStart = Math.min(...ids) - 1;
+
 
 // LOAD INITIAL USERS
 
