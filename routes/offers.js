@@ -6,7 +6,7 @@ const knex = require('../knex')
 router.get('/:userid', (req, res, next) => {
 	knex
 	// SELECT offers.id, categories.title
-	.select('offers.id', 'categories.title')
+	.select('categories.title')
 	// FROM offers
 	.from('offers')
 	// INNER JOIN categories
