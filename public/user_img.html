@@ -56,23 +56,25 @@
     </nav>
 
     <!-- GREEN AREA -->
-    <section class="bg-primary text-white mb-0" id="about">
+    <header class="masthead bg-primary text-white text-center mb-0" id="about">
+      <h2 class="text-center text-uppercase text-white mb-0">
+        Upload Profile Image
+      </h2>
+      <hr class="star-light mb-5"/>
       <div class="container">
-        <h2 class="text-center text-uppercase text-white">Upload Profile Image</h2>
-        <hr class="star-light mb-5"/>
-          <div class="container mb-4" id="userImgContainer" style="background: url(https://is5-ssl.mzstatic.com/image/thumb/Purple71/v4/36/09/16/36091621-a5a0-eabe-cc28-eaaa47aa2a74/mzl.otsvvuzi.png/1200x630bb.jpg); background-size:contain; background-repeat: no-repeat; background-position: center; width: 300px; height: 300px;"></div>
+          <div class="container mb-4" id="userImgContainer" style="background: url(https://fam-io.herokuapp.com/vendor/freelancer/img/pusheen_default.jpg); background-size:contain; background-repeat: no-repeat; background-position: center; width: 300px; height: 300px;"></div>
           </div>
         <div id="userImg" class="container">
-          <form action="#" method="PUT" target="self">
-          Upload your Own image URL : <input type="url" id="userImage" name="userImage"/>
-            <button type="button" id="submit" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">
+          <form id="image-form">
+          Upload your Own image URL : <input type="url" id="userImage" name="userImage" required/>
+            <button id="submit" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">
           Submit
             </button>
             <button type="button" id="next" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded">Next</button>
           </form>
         </div>
         <!-- button that populates default image above, send image URL to database, redirect to /sighnup2 -->
-    </section>
+    </header>
 
     <!-- Footer -->
     <footer class="footer text-center">

@@ -45,7 +45,7 @@ router.post('/', (req, res, next) => {
 					name: req.body.name,
 					email: req.body.email,
 					hashed_password: hashed,
-					image_url: `https://www.gravatar.com/avatar/${md5(req.body.email)}.jpg`
+					image_url: `https://www.gravatar.com/avatar/${md5(req.body.email)}?s=500&d=https://fam-io.herokuapp.com/vendor/freelancer/img/pusheen_default.jpg`
 				})
 				.returning('*')
 				.then((result) => {

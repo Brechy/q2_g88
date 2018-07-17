@@ -6,7 +6,10 @@
     "test": "NODE_ENV=test mocha",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "initDB": "knex migrate:rollback; knex migrate:latest; knex seed:run"
+    "seed-dev": "knex migrate:rollback; knex migrate:latest; knex seed:run",
+    "seed-prod": "heroku run 'knex migrate:rollback; knex migrate:latest; knex seed:run'",
+    "db-dev": "psql fam_dev -c 'select id, name, email, city, facebook, instagram from users;'",
+    "db-prod": "heroku psql -c 'select id, name, email, city, facebook, instagram from users;'"
   },
   "dependencies": {
     "bcrypt": "^2.0.1",

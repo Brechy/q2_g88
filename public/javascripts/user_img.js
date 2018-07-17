@@ -11,9 +11,9 @@ function addEventListeners() {
 		event.preventDefault();
 		window.location.replace('/signup2');
 	});
-	const submit = document.querySelector('#submit');
-	submit.addEventListener('click', (event) => {
-		event.preventDefault();
+	const submit = document.querySelector('#image-form');
+	submit.addEventListener('submit', (event) => {
+		// event.preventDefault();
 		userImage();
 	});
 }
@@ -23,6 +23,7 @@ function addEventListeners() {
 const updateImage = () => {
 	const email = window.localStorage.getItem('fam:email');
 	if(!email) {
+		alert('Redirecting to beginning of signup');
 		window.location.replace('/signup');
 		return;
 	}
